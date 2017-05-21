@@ -27,4 +27,48 @@ npm run e2e
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+#目录结构:
+vue-element-admin:							 项目名称  
+|   .babelrc                   babel的配置文件  
+|   .editorconfig              编辑器的配置文件  
+|   .gitignore                 git的忽略文件  
+|   .postcssrc.js              编译css的工具  
+|   index.html                 网站主页  
+|   package.json               项目依赖哪些包的文件  
+|   README.md                  说明文档  
+|   
++---build                      构建的配置文件夹  
+|       build.js               项目构建配置入口
+|       check-versions.js 
+|       dev-client.js
+|       dev-server.js
+|       utils.js
+|       vue-loader.conf.js
+|       webpack.base.conf.js
+|       webpack.dev.conf.js
+|       webpack.prod.conf.js
+|       webpack.test.conf.js
+|       
++---config                      整体的配置文件夹
+|       dev.env.js
+|       index.js                配置文件入口
+|       prod.env.js
+|       test.env.js
+|       
++---src                         源文件夹
+|   |   App.vue                 布局组件
+|   |   main.js                 入口文件
+|   |   
+|   +---assets                  静态文件夹
+|   |       logo.png
+|   |       
+|   +---components              组件文件夹
+|   |       Hello.vue           单个组件
+|   |       
+|   \---router                  路由文件夹
+|           index.js            路由主页
+|           
++---static                      静态文件夹
+|       .gitkeep                空文件（Git本身不允许全空目录提交至版本库，一个办法是在目录下创建一个文件，取名为.gitkeep是习惯用法）
+|       
+\---test                        测试文件夹
