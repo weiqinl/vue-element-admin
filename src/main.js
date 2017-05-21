@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Button, InputNumber } from 'element-ui'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
-Vue.use(Button)
-Vue.use(InputNumber)
+Vue.use(ElementUI)
+
 
 Vue.config.productionTip = false
 

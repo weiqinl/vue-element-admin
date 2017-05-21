@@ -3,12 +3,7 @@
     ["env", { "modules": false }],
     "stage-2"
   ],
-  "plugins": [["component", [
-    {
-      "libraryName": "element-ui",
-      "styleLibraryName": "theme-default"
-    }
-  ]],"transform-runtime"],
+  "plugins": ["transform-runtime"],
   "comments": false,
   "env": {
     "test": {
