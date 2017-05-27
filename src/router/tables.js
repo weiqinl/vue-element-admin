@@ -5,7 +5,7 @@ export default [{
     path: 'basic',
     name: 'basictable',
     component: Basictable,
-    meta: ['基础表格']
+    meta: ['基础表格'],
 }, {
     path: 'fixedheader',
     name: 'fixedheadertable',

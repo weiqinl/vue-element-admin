@@ -37,7 +37,6 @@ export default {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  
   .viewFrame-nav {
     height: 100%;  
     background: #324157;

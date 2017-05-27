@@ -14,32 +14,26 @@ export default new Router({
     routes: [{
         path: '/',
         redirect: 'home',
-        meta: ['首页'],
     }, {
         path: '/login',
         name: 'login',
         component: Login,
-        meta: ['登录'],
     }, {
         path: '/home',
-        name: 'home',
         component: Index,
-        meta: ['首页'],
         children: [{
             path: '',
-            name: 'home',
             component: Home,
-            meta: ['Home'],
+            meta: ['Dashboard1'],
         }]
     }, {
         path: '/tables',
         name: 'tables',
-        redirect: '/tables/basic',
+        redirect: 'tables/basic',
         component: Index,
-        meta: ['表格'],
         children: tables
     }, {
         path: '*',
-        redirect: 'index'
+        redirect: 'home'
     }]
 })

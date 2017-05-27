@@ -1,4 +1,6 @@
- <template>
+<template>
+ <div class="bastic-table">
+    <div class="page-content">
     <el-table
       :data="tableData"
       style="width: 100%">
@@ -17,7 +19,9 @@
         label="Address">
       </el-table-column>
     </el-table>
-  </template>
+  </div>
+  </div>
+</template>
 
   <script>
     export default {
