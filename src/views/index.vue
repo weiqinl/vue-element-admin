@@ -4,7 +4,7 @@
         <topbar></topbar>
       </header>
       <nav class="viewFrame-nav l">
-          <sidebar></sidebar>
+        <sidebar></sidebar>
       </nav>
       <section class="viewFrame-section">
         <div class="section-frame">
@@ -15,7 +15,6 @@
         </div>
         <footbar></footbar>
       </section>
-    </div>
   </div>
 </template>
 <script>
@@ -35,5 +34,20 @@ export default {
 </script>
 <style lang="scss">
 .viewFramework {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  
+  .viewFrame-nav {
+    height: 100%;  
+    background: #324157;
+  }
+  .viewFrame-section {
+    height: calc(100% - 58px);
+    overflow-y: scroll;
+    .section-frame {
+      min-height: calc(100% - 33px);
+    }
+  }
 }
 </style>
