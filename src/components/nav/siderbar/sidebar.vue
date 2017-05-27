@@ -2,7 +2,7 @@
   <div class="wq-sidebar">
     <el-row class="tac">
       <el-col :span="24">
-        <el-menu theme="dark" default-active="1" :unique-opened=false router @open="handleOpen" @close="handleClose">
+        <el-menu theme="dark" :default-active="$route.path" :unique-opened=false router @open="handleOpen" @close="handleClose">
           <el-menu-item index="/home"><i class="el-icon-menu"></i> 首页
           </el-menu-item>
           <el-submenu index="tables">
