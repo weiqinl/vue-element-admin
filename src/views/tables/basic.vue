@@ -1,6 +1,6 @@
 <template>
  <div class="bastic-table">
-    <div class="page-content">
+      <div class="page-content">
     <el-table
       :data="tableData"
       style="width: 100%">
@@ -13,12 +13,23 @@
         prop="name"
         label="Name"
         width="180">
-      </el-table-column>
+        </el-table-column>
       <el-table-column
         prop="address"
         label="Address">
       </el-table-column>
     </el-table>
+    <div class="pagination">
+      <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage"
+      :page-sizes="[100, 200, 300, 400]"
+      :page-size="100"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="400">
+      </el-pagination>
+    </div>
   </div>
   </div>
 </template>
@@ -27,6 +38,7 @@
     export default {
       data() {
         return {
+          currentPage: 1,
           tableData: [{
             date: '2016-05-03',
             name: 'Tom',
@@ -44,6 +56,14 @@
             name: 'Tom',
             address: 'No. 189, Grove St, Los Angeles'
           }]
+        }
+      },
+      methods: {
+        handleSizeChange(val) {
+          console.log(`每页 ${val} 条`);
+        },
+        handleCurrentChange(val) {
+          console.log(`当前页: ${val}`);
         }
       }
     }

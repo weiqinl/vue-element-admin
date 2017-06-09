@@ -18,7 +18,7 @@ export default {
         password: 'admin'
       }
     },
-    methods: {     
+    methods: {
       // 模拟登录
       login() {
         if (this.phoneNum && this.password) {
