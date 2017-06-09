@@ -24,7 +24,7 @@ export default new Router({
         children: [{
             path: '',
             component: Home,
-            meta: ['Dashboard1'],
+            meta: ['Dashboard'],
         }]
     }, {
         path: '/tables',
