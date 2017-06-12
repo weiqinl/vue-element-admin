@@ -41,6 +41,14 @@ return {
         title: '固定标头表格',
         path: '/tables/fixedheader'
       }]
+    },{
+      title:'表单管理',
+      path: '/forms',
+      icon: 'el-icon-setting',
+      child: [{
+        title: '基础表单',
+        path: '/forms/basicneed',
+      }]
     }]
 }
   },
