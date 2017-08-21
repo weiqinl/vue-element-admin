@@ -1,4 +1,4 @@
-var chalk = require('chalk') //定制终端字符串的输出样式
+var chalk = require('chalk') //定制终端字符串的颜色输出样式
 var semver = require('semver')  // 语义化版本控制规范
 var packageConfig = require('../package.json') 
 var shell = require('shelljs') // 调用系统命令
@@ -39,7 +39,7 @@ module.exports = function () {
     }
   }
 
-// 如果有警告，则用黄色字体将警告输出到终端
+// 如果有警告，则用黄色字体将警告输出到终端，并终止当前进程
   if (warnings.length) {
     console.log('')
     console.log(chalk.yellow('To use this template, you must update following to modules:'))

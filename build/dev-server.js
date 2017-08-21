@@ -1,4 +1,4 @@
-// 调用check-versions.js 模块，检查版本node和npm的版本
+// 调用check-versions.js 模块，检查node和npm的版本，是否符合最低要求
 require('./check-versions')()
 
 // 获取配置
