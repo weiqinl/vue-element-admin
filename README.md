@@ -1,7 +1,8 @@
 # vue-element-admin
 
-> Vuejs实例-Vuejs2.0全家桶结合ELementUI制作后台管理界统系统
+> [Vuejs实例-Vuejs2.0全家桶结合ELementUI制作后台管理系统](http://www.cnblogs.com/weiqinl/p/6873761.html)
 
+[直接访问地址:http://weiqinl.com/vue-element-admin/index.html](http://weiqinl.com/vue-element-admin/index.html)
 
 # 用到的技术
 1. vuejs 框架
