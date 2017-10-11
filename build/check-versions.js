@@ -3,7 +3,7 @@ var semver = require('semver')  // 语义化版本控制规范
 var packageConfig = require('../package.json') 
 var shell = require('shelljs') // 调用系统命令
 
-// 调用子线程同步执行 终端命令
+// 调用子线程同步执行 cmd终端命令
 function exec (cmd) {
   return require('child_process').execSync(cmd).toString().trim()
 }
