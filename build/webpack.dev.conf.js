@@ -1,3 +1,4 @@
+// 开发环境的webpack配置
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -7,6 +8,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 // add hot-reload related code to entry chunks
+// 增加热重载相关代码到 入口分块
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
