@@ -8,8 +8,7 @@
         </el-menu-item>
         <el-submenu index="sysset">
           <template slot="title">weiqinl</template>
-          <el-menu-item index="">选项1</el-menu-item>
-          <el-menu-item index="">选项2</el-menu-item>
+          <el-menu-item index="">设置</el-menu-item>
           <el-menu-item index="/login" >退出</el-menu-item>
         </el-submenu>
       </el-menu>
