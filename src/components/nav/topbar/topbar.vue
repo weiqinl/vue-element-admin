@@ -25,13 +25,14 @@
           <el-radio label="0000ff">蓝色-0000ff</el-radio>
           <el-radio label="008000">绿色-008000</el-radio>
         </el-radio-group>
+        <h2>只修改了主色调</h2>
         <div class="block">
           <span class="demonstration">Button: </span>
           <span class="wrapper">
-            <el-button type="success">成功按钮</el-button>
-            <el-button type="warning">警告按钮</el-button>
-            <el-button type="danger">危险按钮</el-button>
-            <el-button type="info">信息按钮</el-button>
+            <el-button >默认按钮</el-button>
+            <el-button type="primary">主要按钮</el-button>
+            <el-button type="text">文字按钮</el-button>
+            <el-button type="primary" :loading="true">加载中</el-button>
           </span>
         </div>
         <div class="block">
@@ -50,35 +51,36 @@
 </template>
 <script>
   import {
-    toggleClass,
     changeClass
   } from '@/utils'
-  import '@/assets/css/theme/custom-theme/index.css'
-  import '@/assets/css/theme/0000ff/index.css' // 换肤版本element-ui css
-  import '@/assets/css/theme/008000/index.css' // 换肤版本element-ui css
-  import '@/assets/css/theme/ff0000/index.css' // 换肤版本element-ui css
-  import '@/assets/css/theme/20a0ff/index.css' // 换肤版本element-ui css
+  import '@/assets/css/theme/0000ff/index.css' // 换肤版本0000ff css
+  import '@/assets/css/theme/008000/index.css' // 换肤版本008000 css
+  import '@/assets/css/theme/ff0000/index.css' // 换肤版本ff0000 css
+  import '@/assets/css/theme/20a0ff/index.css' // 换肤版本20a0ff css
   export default {
     data() {
       return {
-        theme: false,
-        moreTheme: localStorage.getItem('themeValue') ? localStorage.getItem('themeValue') : '20a0ff',
+        moreTheme: '20a0ff',
         activeIndex: '1',
         activeIndex2: '1',
         skinDialogVisible: false
       };
+    },
+    mounted() {
+      let themeClassName = ''
+      let localTheme = localStorage.getItem('themeValue')
+      themeClassName = localTheme ? localTheme : '20a0ff'
+      changeClass(document.body, 'custom-' + themeClassName)
     },
     methods: {
       handleSelect(key, keyPath) {
         console.log(key);
         console.log(keyPath);
       },
-      changeTheme(b) {
-        changeClass(document.body, 'custom-' + b)
-        this.$message('c' + b)
-        console.log(b)
-        this.moreTheme = b
-        localStorage.setItem("themeValue", b)
+      changeTheme(themeValue) {
+        changeClass(document.body, 'custom-' + themeValue)
+        this.moreTheme = themeValue
+        localStorage.setItem("themeValue", themeValue)
       }
     },
     watch: {

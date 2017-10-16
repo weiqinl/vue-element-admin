@@ -170,6 +170,9 @@ export function parseTime(time, cFormat) {
     element.className = classString
   }
   export function changeClass(element, className) {
+    if (!element || !className) {
+      return
+    }
     element.className = className
   }
   export const pickerOptions = [
