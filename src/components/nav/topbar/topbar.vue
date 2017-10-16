@@ -82,9 +82,6 @@
         this.moreTheme = themeValue
         localStorage.setItem("themeValue", themeValue)
       }
-    },
-    watch: {
-
     }
   }
 

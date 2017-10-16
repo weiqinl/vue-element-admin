@@ -39,7 +39,6 @@ export default {
   height: 100%;
   .viewFrame-nav {
     height: 100%;  
-    background: #324157;
   }
   .viewFrame-section {
     height: calc(100% - 58px);
