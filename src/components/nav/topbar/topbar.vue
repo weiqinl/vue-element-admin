@@ -4,8 +4,8 @@
       <img src="../../../assets/images/logo.png" class="logo">
     </a>
     <div class="top-menu-box">
-      <el-menu router :default-active="activeIndex" class="el-menu-top" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="">
+      <el-menu router default-active="activeIndex" class="el-menu-top" mode="horizontal" @select="handleSelect">
+        <el-menu-item index="sousuo">
           <el-input placeholder="搜索"></el-input>
         </el-menu-item>
         <el-submenu index="sysset">
@@ -21,15 +21,16 @@
       <span>
         <el-radio-group v-model="moreTheme" @change="changeTheme">
           <el-radio label="20a0ff">默认-20a0ff</el-radio>
-          <el-radio label="ff0000">红色-ff0000</el-radio>
+          <el-radio label="fa4f52">红色-fa4f52</el-radio>
           <el-radio label="0000ff">蓝色-0000ff</el-radio>
           <el-radio label="008000">绿色-008000</el-radio>
+          <el-radio label="00a597">绿色-00a597</el-radio>
         </el-radio-group>
         <h2>只修改了主色调</h2>
         <div class="block">
           <span class="demonstration">Button: </span>
           <span class="wrapper">
-            <el-button >默认按钮</el-button>
+            <el-button>默认按钮</el-button>
             <el-button type="primary">主要按钮</el-button>
             <el-button type="text">文字按钮</el-button>
             <el-button type="primary" :loading="true">加载中</el-button>
@@ -53,16 +54,12 @@
   import {
     changeClass
   } from '@/utils'
-  import '@/assets/css/theme/0000ff/index.css' // 换肤版本0000ff css
-  import '@/assets/css/theme/008000/index.css' // 换肤版本008000 css
-  import '@/assets/css/theme/ff0000/index.css' // 换肤版本ff0000 css
-  import '@/assets/css/theme/20a0ff/index.css' // 换肤版本20a0ff css
+
   export default {
     data() {
       return {
-        moreTheme: '20a0ff',
         activeIndex: '1',
-        activeIndex2: '1',
+        moreTheme: '20a0ff',
         skinDialogVisible: false
       };
     },
@@ -71,6 +68,7 @@
       let localTheme = localStorage.getItem('themeValue')
       themeClassName = localTheme ? localTheme : '20a0ff'
       changeClass(document.body, 'custom-' + themeClassName)
+      this.moreTheme = themeClassName
     },
     methods: {
       handleSelect(key, keyPath) {
@@ -87,7 +85,6 @@
 
 </script>
 <style lang="scss">
-  @import '../../../assets/css/mixin.scss';
   .wq-topbar {
     display: flex;
     justify-content: space-between;

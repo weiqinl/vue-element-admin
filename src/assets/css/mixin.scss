@@ -1,5 +1,6 @@
-//主色
+ //主色
 $--color: #00a597;
+$bc-nav: #c31c;
 // $--color: #fa4f52;
 //主色 -light
 $--color-light: #1f837b;
@@ -29,7 +30,6 @@ $--color-gray-light-extra: #EFF2F7;
 
 $--color-white: #FFFFFF;
 $--color-white-dark: #F9FAFC;
- 
 
 // 背景图片地址和大小
 @mixin bis($url) {

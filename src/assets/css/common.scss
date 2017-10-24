@@ -48,12 +48,10 @@ figcaption {
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 
-
-/*
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    background-color: #F5F5F5;
+  width: 10px;
+  height: 10px;
+  background-color: #F5F5F5;
 }
 
 
@@ -74,7 +72,6 @@ figcaption {
   background-color: #555;
 }
 
-*/ 
 input[type="button"],
 input[type="submit"],
 input[type="search"],
@@ -92,11 +89,32 @@ body {
   width: 100%;
 }
 
+
 /* 页面标题 */
+
 .page-title {
   font-size: 18px;
   height: 50px;
   line-height: 50px;
   padding-left: 30px;
   border-bottom: 1px solid #ccc;
+}
+
+
+/* 修改element-ui样式 */
+
+
+/* $--color-light:red; */
+
+.el-menu-item.is-active {
+  background-color: $--color;
+  span {
+    color: #fff;
+  }
+}
+
+.el-tooltip__popper.is-dark {
+  span {
+    color: #fff;
+  }
 }

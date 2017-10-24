@@ -4,10 +4,10 @@
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
     </el-radio-group>
-    <el-row class="tac">
+    <el-row >
       <el-col :span="24">
-        <el-menu :default-active="$route.path" unique-opened='true'  @open="handleOpen" @close="handleClose" :collapse="isCollapse"
-          v-for="(item, index) in menuItem" :key="index" router>
+        <el-menu :default-active="$route.path" :unique-opened=true router  @open="handleOpen" @close="handleClose" :collapse="isCollapse"
+          v-for="(item, index) in menuItem" :key="index" >
           <el-menu-item v-if="typeof item.child === 'undefined'" :index="item.path">
             <i class="icon" :class="item.icon"></i>
             <span slot="title">{{ item.title }}</span>
@@ -72,7 +72,7 @@
 <style lang="scss">
   .wq-sidebar {
     height: 100%;
-    width: 200px;
+      width: 200px;
     .el-menu-vertical-demo:not(.el-menu--collapse) {
       width: 200px;
       min-height: 400px;
