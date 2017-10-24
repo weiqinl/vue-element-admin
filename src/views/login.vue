@@ -13,29 +13,33 @@
 <script>
 export default {
   data() {
-      return {
-        phoneNum: 'admin',
-        password: 'admin'
-      }
-    },
-    methods: {
-      // 模拟登录
-      login() {
-        if (this.phoneNum && this.password) {
-        this.$router.push('/home');
-        } else {
-          this.$message({
-              message: '请输入用户名和密码,默认都为admin',
-              type: 'warning',
-              showClose: false
-            })
-        }
+    return {
+      phoneNum: "admin",
+      password: "admin"
+    };
+  },
+  methods: {
+    // 模拟登录
+    login() {
+      if (this.phoneNum && this.password) {
+        this.$store
+          .dispatch("login", "tokenvalue" + Math.random(1000))
+          .then(() => {
+            this.$router.push("/home");
+          });
+      } else {
+        this.$message({
+          message: "请输入用户名和密码,默认都为admin",
+          type: "warning",
+          showClose: false
+        });
       }
     }
-}
+  }
+};
 </script>
 <style lang="scss">
-@import '../assets/css/mixin.scss';
+@import "../assets/css/mixin.scss";
 .app-login {
   width: 100%;
   height: 100%;
@@ -46,7 +50,7 @@ export default {
     top: 30px;
     left: 200px;
     width: 170px;
-    @include bis('../assets/images/logo.png');
+    @include bis("../assets/images/logo.png");
   }
   .login-wrapper {
     position: absolute;
@@ -76,18 +80,18 @@ export default {
         background: #f8f8f8;
       }
     }
-    
+
     .submit {
       display: block;
       height: 45px;
       text-align: center;
       line-height: 45px;
       border-radius: 6px;
-      background: $--color;
+      background: $--color--primary;
       color: #fff;
       font-size: 16px;
       margin: 30px 0;
-    } 
+    }
   }
 }
 </style>

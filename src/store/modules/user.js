@@ -2,18 +2,30 @@ import * as types from '../types.js'
 
 // initial state
 const state = {
-  user: {}
+  token: null
 }
 
 // getters
 const getters = {
-  getUser = state => state.getUser
+  // getUser = state => state.getUser
 }
 
 //actions
 const actions = {
-  getUser({ commit, state }, user) {
+  getUser({
+    commit
+  }, user) {
     commit(types.GETUSER, user)
+  },
+  login({
+    commit
+  }, token) {
+    commit(types.LOGIN, token)
+  },
+  logout({
+    commit
+  }) {
+    commit(types.LOGOUT)
   }
 }
 
@@ -21,6 +33,12 @@ const actions = {
 const mutations = {
   [types.GETUSER](state, user) {
     state.user = user
+  },
+  [types.LOGIN](state, data) {
+    state.token = data
+  },
+  [types.LOGOUT](state) {
+    state.token = null
   }
 }
 export default {

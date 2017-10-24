@@ -107,7 +107,7 @@ body {
 /* $--color-light:red; */
 
 .el-menu-item.is-active {
-  background-color: $--color;
+  background-color: $--color--primary;
   span {
     color: #fff;
   }
