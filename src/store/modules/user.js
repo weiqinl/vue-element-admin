@@ -7,7 +7,9 @@ const state = {
 
 // getters
 const getters = {
-  // getUser = state => state.getUser
+  user: state => {
+    return state
+  }
 }
 
 //actions

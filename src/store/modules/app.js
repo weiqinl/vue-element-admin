@@ -9,7 +9,9 @@ const state = {
 
 // getters
 const getters = {
-  // getSiderbarOpened = state => state.siderbar.opened
+  siderbar: state => {
+    return state.siderbar
+  }
 }
 
 //actions
