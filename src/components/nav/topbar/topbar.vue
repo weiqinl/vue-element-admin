@@ -51,52 +51,48 @@
   </div>
 </template>
 <script>
-  import {
-    changeClass
-  } from '@/utils'
+import { changeClass } from "@/utils";
 
-  export default {
-    data() {
-      return {
-        activeIndex: '1',
-        moreTheme: '20a0ff',
-        skinDialogVisible: false
-      };
+export default {
+  data() {
+    return {
+      activeIndex: "1",
+      moreTheme: "20a0ff",
+      skinDialogVisible: false
+    };
+  },
+  mounted() {
+    let themeClassName = "";
+    let localTheme = localStorage.getItem("themeValue");
+    themeClassName = localTheme ? localTheme : "20a0ff";
+    changeClass(document.body, "custom-" + themeClassName);
+    this.moreTheme = themeClassName;
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key);
+      console.log(keyPath);
     },
-    mounted() {
-      let themeClassName = ''
-      let localTheme = localStorage.getItem('themeValue')
-      themeClassName = localTheme ? localTheme : '20a0ff'
-      changeClass(document.body, 'custom-' + themeClassName)
-      this.moreTheme = themeClassName
-    },
-    methods: {
-      handleSelect(key, keyPath) {
-        console.log(key);
-        console.log(keyPath);
-      },
-      changeTheme(themeValue) {
-        changeClass(document.body, 'custom-' + themeValue)
-        this.moreTheme = themeValue
-        localStorage.setItem("themeValue", themeValue)
-      }
+    changeTheme(themeValue) {
+      changeClass(document.body, "custom-" + themeValue);
+      this.moreTheme = themeValue;
+      localStorage.setItem("themeValue", themeValue);
     }
   }
-
+};
 </script>
 <style lang="scss">
-  .wq-topbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #eef1f6;
-    .logo {
-      height: 50px;
-      padding-top: 6px;
-      padding-left: 60px;
-    }
-    .person {
-      width: 30px;
-    }
+.wq-topbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eef1f6;
+  .logo {
+    height: 50px;
+    padding-top: 6px;
+    padding-left: 60px;
   }
-
+  .person {
+    width: 30px;
+  }
+}
 </style>

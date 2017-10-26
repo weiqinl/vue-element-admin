@@ -7,6 +7,8 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
+import '@/assets/iconfont/iconfont.js'
+
 Vue.use(ElementUI)
 
 

@@ -27,7 +27,7 @@ const actions = {
 // mutations
 const mutations = {
   [types.TOGGLE_SIDERBAR](state) {
-    state.siderbar.opened = !getSiderbarOpened
+    state.siderbar.opened = !state.siderbar.opened
   }
 }
 export default {
