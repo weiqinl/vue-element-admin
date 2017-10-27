@@ -27,15 +27,6 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
 #目录结构:  
@@ -84,3 +75,23 @@ npm test
       |       .gitkeep                空文件（Git本身不允许全空目录提交至版本库，一个办法是在目录下创建一个文件，取名为.gitkeep是习惯用法）
       |       
       \---test                        测试文件夹
+
+# ElementUI动态切换主题色(动态换肤)
+
+## 如何增加主题文件
+说明：此项目UI是在elementUI基础上建立的，所以，我们可以通过element提供的方法，来[自定义主题](http://element.eleme.io/#/zh-CN/component/custom-theme)。
+### 生成自定义主题文件
+使用工具下载自定义主题文件，并命名为`wq-variables.css`。以后我们如果想要增加主题文件，只需要修改变量文件中各个变量所对应的值。
+### 编译主题
+我们利用[工具](http://element.eleme.io/#/zh-CN/component/custom-theme#an-zhuang-gong-ju)来编译主题。  
+在终端，将刚刚修改好的变量文件，通过命令`node_modules/.bin/et -c wq-variables.css`来编译主题。
+
+### 给自定义主题增加命名空间
+默认情况下，编译的主题目录会放在`./theme`下。由于，我们是通过改变css的命名空间来切换主题的，那么，我们就需要为刚生成的主题增加命名空间。主题文件内容很多，如果手动一个个添加命名空间，工作量巨大，这个时候，可以使用另一个[给css增加命名空间的工具](https://github.com/weiqinl/tool-web/tree/master/gulpcsswrap)。下载这个项目（当然，也可以将这个工具集成到此项目中，但是我感觉没必要），然后只需要修改`gulpfile.js`文件中①②③3处内容，就可以得到想要的内容，这里注意，本项目css自定义的命名空间统一为`custom-******`,其中`******`建议使用主题色的16进制编码,也可以使用其他字符串，但是要和radio标签统一。
+
+### 引用自定义主题
+自定义主题文件，已经有了，只剩下如何引入使用了。
+
+* 在App.vue中import新增的主题样式
+* 在`./src/components/nav/topbar/topbar.vue`中，添加对应的radio标签
+经过以上两步，就可以正常使用了。

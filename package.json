@@ -1,6 +1,6 @@
 {
   "name": "vue-element-admin",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "vuVuejs实例-Vuejs2.0全家桶结合ELementUI制作后台管理界统系统",
   "author": "<772863869@qq.com> weiqinl ",
   "private": true,
@@ -35,6 +35,8 @@
     "cross-env": "^4.0.0",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
+    "element-theme": "^0.7.2",
+    "element-theme-default": "^1.4.7",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
