@@ -1,7 +1,6 @@
 @import './mixin.scss';
 body,
 div,
-span,
 header,
 footer,
 nav,
@@ -105,13 +104,6 @@ body {
 
 
 /* $--color-light:red; */
-
-.el-menu-item.is-active {
-  background-color: $--color--primary;
-  span {
-    color: #fff;
-  }
-}
 
 .el-tooltip__popper.is-dark {
   span {

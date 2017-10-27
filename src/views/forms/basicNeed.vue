@@ -54,68 +54,66 @@
   </div>
 </template>
 <script>
- 	export default {
-    data() {
-      /* 验证输入的是否全为空 */
-      let validateSpace = (rule, value, callback) => {
-        if (value.trim().length == 0) {
-            callback(new Error('不允许为空值'));
-        } else {
-            callback();
-        }
-      };
-      return {
-        form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-        },
-        rules: {
-           name: [
-            { required: true, message: '请输入活动名称', trigger: 'blur' },
-            { validator: validateSpace, trigger: 'blur, change' },
-            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-          ],
-          region: [
-            { required: true, message: '请选择活动区域', trigger: 'change' }
-          ],
-          date1: [
-            { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
-          ],
-          date2: [
-            { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
-          ],
-          type: [
-            { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
-          ],
-          resource: [
-            { required: true, message: '请选择活动资源', trigger: 'change' }
-          ],
-          desc: [
-            { required: true, message: '请填写活动形式', trigger: 'blur' }
-          ]
-        }
-      };
-    },
-    methods: {
-      onSubmit(form) {
-         this.$refs[form].validate((valid) => {
-          if (valid) {
-            alert('验证通过')
-          }
-           else {
-             alert('验证失败')
-           }
-         })
-      },
-      resetForm(form) {
-        this.$refs[form].resetFields();
+export default {
+  data() {
+    /* 验证输入的是否全为空 */
+    let validateSpace = (rule, value, callback) => {
+      if (value.trim().length == 0) {
+        callback(new Error("不允许为空值"));
+      } else {
+        callback();
       }
+    };
+    return {
+      form: {
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      },
+      rules: {
+        name: [
+          { required: true, message: "请输入活动名称", trigger: "blur" },
+          { validator: validateSpace, trigger: "blur, change" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        region: [{ required: true, message: "请选择活动区域", trigger: "change" }],
+        date1: [
+          { type: "date", required: true, message: "请选择日期", trigger: "change" }
+        ],
+        date2: [
+          { type: "date", required: true, message: "请选择时间", trigger: "change" }
+        ],
+        type: [
+          {
+            type: "array",
+            required: true,
+            message: "请至少选择一个活动性质",
+            trigger: "change"
+          }
+        ],
+        resource: [{ required: true, message: "请选择活动资源", trigger: "change" }],
+        desc: [{ required: true, message: "请填写活动形式", trigger: "blur" }]
+      }
+    };
+  },
+  methods: {
+    onSubmit(form) {
+      this.$refs[form].validate(valid => {
+        if (valid) {
+          alert("验证通过");
+        } else {
+          alert("验证失败");
+        }
+      });
+    },
+    resetForm(form) {
+      this.$refs[form].resetFields();
     }
   }
+};
 </script>

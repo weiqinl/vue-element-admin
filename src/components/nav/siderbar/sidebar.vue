@@ -1,31 +1,29 @@
 <template>
-  <div class="wq-sidebar">
-    <div v-bind:class='foldObj'  @click="toggleFold" >
-      <icon-svg :iconClass='iconObj' class="abc"></icon-svg>
+  <nav class="wq-sidebar" v-bind:class='foldObj'>
+    <div class="sidebar-fold"  @click="toggleFold" >
+      <icon-svg :iconClass='iconObj' class="fold-svg"></icon-svg>
     </div>
-    <el-row >
-      <el-col :span="24">
-        <el-menu :default-active="$route.path" :unique-opened=true router  @open="handleOpen" @close="handleClose" 
-        :collapse='isCollapse'
-          v-for="(item, index) in menuItem" :key="index" >
-          <el-menu-item v-if="typeof item.child === 'undefined'" :index="item.path">
-            <i class="icon" :class="item.icon"></i>
-            <span slot="title">{{ item.title }}</span>
-          </el-menu-item>
-          <el-submenu v-else :index="item.path">
-            <template slot="title">
-              <i class="icon" :class="item.icon"></i>
-              <span slot="title">{{ item.title }}</span>
-            </template>
-            <el-menu-item v-for="(child_item, child_index) in item.child" :index="child_item.path" :key="child_index">
-              <i class="icon" :class="child_item.icon"></i>              
-              <span slot="title">{{ child_item.title }}</span>
-            </el-menu-item>
-          </el-submenu>
-        </el-menu>
-      </el-col>
-    </el-row>
-  </div>
+    <div class="sidebar-menu"  >
+    <el-menu :default-active="$route.path" :unique-opened=true router  @open="handleOpen" @close="handleClose" 
+    :collapse='isCollapse'
+      v-for="(item, index) in menuItem" :key="index" >
+      <el-menu-item v-if="typeof item.child === 'undefined'" :index="item.path">
+        <i class="icon" :class="item.icon"></i>
+        <span slot="title">{{ item.title }}</span>
+      </el-menu-item>
+      <el-submenu v-else :index="item.path">
+        <template slot="title">
+          <i class="icon" :class="item.icon"></i>
+          <span slot="title">{{ item.title }}</span>
+        </template>
+        <el-menu-item v-for="(child_item, child_index) in item.child" :index="child_item.path" :key="child_index">
+          <i class="icon" :class="child_item.icon"></i>              
+          <span slot="title">{{ child_item.title }}</span>
+        </el-menu-item>
+      </el-submenu>
+    </el-menu>
+    </div>
+  </nav>
 </template>
 <script>
 import iconSvg from "@/components/icon-svg";
@@ -75,8 +73,8 @@ export default {
     },
     foldObj() {
       return this.$store.state.app.siderbar.opened
-        ? "sidebar-fold"
-        : "sidebar-unfold";
+        ? "show-sidebar"
+        : "hide-sidebar";
     }
   },
   methods: {
@@ -97,34 +95,28 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "../../../assets/css/common.scss";
+
 .wq-sidebar {
   height: 100%;
-  width: 200px;
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
-  }
+  overflow: hidden;
   .sidebar-fold {
-    background-color: #20a0ff;
     cursor: pointer;
-    .abc {
+    text-align: center;
+    height: 28px;
+    .fold-svg {
       color: #333;
       font-size: 26px;
-      margin: 0 auto;
-      padding-left: 10px;
+    }
+    &.hide-sidebar {
+      width: 64px;
     }
   }
-  .sidebar-unfold {
-    width: 64px;
-    background-color: #20a0ff;
-    .abc {
-      color: #333;
-      font-size: 26px;
-    }
-    &:active {
-      width: 200px;
-      // transition: width 14.0s;
-    }
+  &.show-sidebar {
+    min-width: 200px;
+  }
+  &.hide-sidebar {
+    min-width: 64px;
   }
 }
 </style>

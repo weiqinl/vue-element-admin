@@ -1,7 +1,6 @@
 <template>
   <div class="app-login">
     <section class="login-wrapper">
-      <h1 class="logo"></h1>
       <div class="login-content">
         <el-input placeholder="请输入用户名" class="phone-number" v-model="phoneNum"></el-input>
         <el-input placeholder="请输入密码" type="password" class="password-number" v-model="password" @keyup.enter.native="login"></el-input>
@@ -43,15 +42,14 @@ export default {
 .app-login {
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(top, #00a597 45%, #fff 45%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr=#00a597,
+      endColorstr=#FFFFFFFF,
+      GradientType=0
+    );
+  background-color: #00a597;
+  background: linear-gradient(to bottom, #00a597 45%, #fff 45%, #fff 100%);
   position: relative;
-  .logo {
-    position: relative;
-    top: 30px;
-    left: 200px;
-    width: 170px;
-    @include bis("../assets/images/logo.png");
-  }
   .login-wrapper {
     position: absolute;
     top: 50%;
@@ -80,7 +78,6 @@ export default {
         background: #f8f8f8;
       }
     }
-
     .submit {
       display: block;
       height: 45px;

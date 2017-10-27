@@ -1,22 +1,20 @@
 <template>
-  <div class="wq-topbar h60">
-    <a href="#">
-      <img src="../../../assets/images/logo.png" class="logo">
-    </a>
-    <div class="top-menu-box">
-      <el-menu router default-active="activeIndex" class="el-menu-top" mode="horizontal" @select="handleSelect">
+  <div class="wq-topbar">
+    <el-menu router default-active="activeIndex" class="el-menu-top" mode="horizontal" @select="handleSelect">
+      <img src="../../../assets/images/logo.png" class="logo h60">
+      <div class="top-menu-item">
         <el-menu-item index="sousuo">
           <el-input placeholder="搜索"></el-input>
         </el-menu-item>
+        <el-menu-item index="huanfu"  @click="skinDialogVisible = true">换肤</el-menu-item>
         <el-submenu index="sysset">
           <template slot="title">weiqinl</template>
-          <el-menu-item index="0">设置</el-menu-item>
-          <el-menu-item index="" @click="skinDialogVisible = true">换肤</el-dropdown>
-          </el-menu-item>
+          <el-menu-item index="grzx-bky"><a href='http://www.cnblogs.com/weiqinl' target="_blank">博客地址</a></el-menu-item>
+          <el-menu-item index="grzx-xmdz"><a href='https://github.com/weiqinl/vue-element-admin' target="_blank">项目地址</a></el-menu-item>
           <el-menu-item index="/login">退出</el-menu-item>
         </el-submenu>
-      </el-menu>
-    </div>
+      </div>
+    </el-menu>
     <el-dialog title="动态换肤" :visible.sync="skinDialogVisible" size="small">
       <span>
         <el-radio-group v-model="moreTheme" @change="changeTheme">
@@ -83,16 +81,20 @@ export default {
 </script>
 <style lang="scss">
 .wq-topbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: #eef1f6;
-  .logo {
-    height: 50px;
-    padding-top: 6px;
-    padding-left: 60px;
-  }
-  .person {
-    width: 30px;
+  .el-menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      line-height: 60px;
+      padding: 6px;
+      padding-left: 60px;
+    }
+    .top-menu-item {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 }
 </style>
