@@ -49,8 +49,6 @@
   </div>
 </template>
 <script>
-import { changeClass } from "@/utils";
-
 export default {
   data() {
     return {
@@ -63,16 +61,20 @@ export default {
     let themeClassName = "";
     let localTheme = localStorage.getItem("themeValue");
     themeClassName = localTheme ? localTheme : "20a0ff";
-    changeClass(document.body, "custom-" + themeClassName);
+    this.changeClass(document.body, "custom-" + themeClassName);
     this.moreTheme = themeClassName;
   },
   methods: {
+    changeClass(element, className) {
+      if (!element || !className) return;
+      element.className = className;
+    },
     handleSelect(key, keyPath) {
       console.log(key);
       console.log(keyPath);
     },
     changeTheme(themeValue) {
-      changeClass(document.body, "custom-" + themeValue);
+      this.changeClass(document.body, "custom-" + themeValue);
       this.moreTheme = themeValue;
       localStorage.setItem("themeValue", themeValue);
     }
