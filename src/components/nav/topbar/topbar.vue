@@ -20,8 +20,6 @@
         <el-radio-group v-model="moreTheme" @change="changeTheme">
           <el-radio label="20a0ff">默认-20a0ff</el-radio>
           <el-radio label="fa4f52">红色-fa4f52</el-radio>
-          <el-radio label="0000ff">蓝色-0000ff</el-radio>
-          <el-radio label="008000">绿色-008000</el-radio>
           <el-radio label="00a597">绿色-00a597</el-radio>
         </el-radio-group>
         <h2>只修改了主色调</h2>
