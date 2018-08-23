@@ -5,8 +5,8 @@ module.exports = {
   // 构建应用程序时使用的配置
   build: { // 生产环境
     env: require('./prod.env'), // 环境变量，使用config/prod.env.js中定义的编译环境
-    index: path.resolve(__dirname, '../dist/index.html'), // html入口文件
-    assetsRoot: path.resolve(__dirname, '../dist'), // 应用程序存放的资源路径，本地文件系统上的绝对路径
+    index: path.resolve(__dirname, '../docs/index.html'), // html入口文件
+    assetsRoot: path.resolve(__dirname, '../docs'), // 应用程序存放的资源路径，本地文件系统上的绝对路径
     assetsSubDirectory: 'static', // 应用程序存放的资源主目录
     assetsPublicPath: './', // 资源发布的根目录,如果资源不是放在宿主机的根目录，一般修改为'./'
     productionSourceMap: true, // 打包的文件，是否打开source-map  true打开 false 不打开
@@ -29,7 +29,7 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: { // 开发环境
-    env: require('./dev.env'),  // 环境变量，使用config/dev.env.js中定义的编译环境
+    env: require('./dev.env'), // 环境变量，使用config/dev.env.js中定义的编译环境
     port: 8017, // 运行测试页面时候的端口号
     autoOpenBrowser: true, // 是否自动打开浏览器。true 是，false 否
     assetsSubDirectory: 'static', // 应用程序存放的资源主目录 
