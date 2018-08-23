@@ -6,6 +6,7 @@ import Login from '../views/login.vue'
 
 import tables from './tables.js'
 import forms from './forms.js'
+import components from './components.js'
 
 Vue.use(Router)
 
@@ -39,7 +40,13 @@ export default new Router({
     redirect: 'forms/basicneed',
     component: Index,
     children: forms
-  }, {
+  },{
+    path: '/components',
+    name: 'components',
+    redirect: 'components/tabs',
+    component: Index,
+    children: components
+  },{
     path: '*',
     redirect: 'home'
   }]

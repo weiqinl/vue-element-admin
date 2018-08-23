@@ -26,76 +26,87 @@
   </nav>
 </template>
 <script>
-import iconSvg from "@/components/icon-svg";
+import iconSvg from '@/components/icon-svg'
 
 export default {
   data() {
     return {
       menuItem: [
         {
-          title: "首页",
-          path: "/home",
-          icon: "el-icon-menu"
+          title: '首页',
+          path: '/home',
+          icon: 'el-icon-menu'
         },
         {
-          title: "表格管理",
-          path: "/tables",
-          icon: "el-icon-setting",
+          title: '表格管理',
+          path: '/tables',
+          icon: 'el-icon-setting',
           child: [
             {
-              title: "基础表格",
-              path: "/tables/basic"
+              title: '基础表格',
+              path: '/tables/basic'
             },
             {
-              title: "固定标头表格",
-              path: "/tables/fixedheader"
+              title: '固定标头表格',
+              path: '/tables/fixedheader'
             }
           ]
         },
         {
-          title: "表单管理",
-          path: "/forms",
-          icon: "el-icon-setting",
+          title: '组件管理',
+          path: '/components',
+          icon: 'el-icon-menu',
           child: [
             {
-              title: "基础表单",
-              path: "/forms/basicneed"
+              title: 'Tabs',
+              path: '/components/tabs'
+            }
+          ]
+        },
+        {
+          title: '表单管理',
+          path: '/forms',
+          icon: 'el-icon-setting',
+          child: [
+            {
+              title: '基础表单',
+              path: '/forms/basicneed'
             }
           ]
         }
       ],
       isCollapse: false
-    };
+    }
   },
   computed: {
     iconObj() {
-      return this.$store.state.app.siderbar.opened ? "fold" : "unfold";
+      return this.$store.state.app.siderbar.opened ? 'fold' : 'unfold'
     },
     foldObj() {
       return this.$store.state.app.siderbar.opened
-        ? "show-sidebar"
-        : "hide-sidebar";
+        ? 'show-sidebar'
+        : 'hide-sidebar'
     }
   },
   methods: {
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     },
     toggleFold() {
-      this.isCollapse = this.$store.state.app.siderbar.opened;
-      this.$store.dispatch("toggle_siderbar");
+      this.isCollapse = this.$store.state.app.siderbar.opened
+      this.$store.dispatch('toggle_siderbar')
     }
   },
   components: {
     iconSvg
   }
-};
+}
 </script>
 <style lang="scss">
-@import "../../../assets/css/common.scss";
+@import '../../../assets/css/common.scss';
 
 .wq-sidebar {
   height: 100%;
@@ -117,6 +128,10 @@ export default {
   }
   &.hide-sidebar {
     min-width: 64px;
+  }
+  .sidebar-menu {
+    background-color: #eef1f6;
+    height: 100%;
   }
 }
 </style>
