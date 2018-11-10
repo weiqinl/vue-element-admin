@@ -33,9 +33,12 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   .viewFrame-content {
+    flex: 1;
+    height: 100%;
     display: flex;
-    height: calc(100% - 72px);
     .section-content {
       flex: 1;
       display: flex;
