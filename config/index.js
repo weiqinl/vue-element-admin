@@ -9,7 +9,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../docs'), // 应用程序存放的资源路径，本地文件系统上的绝对路径
     assetsSubDirectory: 'static', // 应用程序存放的资源主目录
     assetsPublicPath: './', // 资源发布的根目录,如果资源不是放在宿主机的根目录，一般修改为'./'
-    productionSourceMap: true, // 打包的文件，是否打开source-map  true打开 false 不打开
+    productionSourceMap: false, // 打包的文件，是否打开source-map  true打开 false 不打开
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:

@@ -39,6 +39,11 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  externals: {
+    vue: 'Vue',
+    echarts: 'echarts',
+    'element-ui': 'ELEMENT',
+  },
   // 模块配置
   module: {
     // 模块规则(配置 loader、解析器等选项)
