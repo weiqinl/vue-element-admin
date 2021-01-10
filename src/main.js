@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+
+import './directive' // 自定义指令
+
 import ELEMENT from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 

@@ -60,6 +60,9 @@ export default {
             {
               title: 'Tabs',
               path: '/components/tabs'
+            },{
+              title: 'Directives',
+              path: '/components/directives'
             }
           ]
         },
